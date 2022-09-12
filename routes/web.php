@@ -12,7 +12,7 @@ use App\Http\Controllers\StudentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route::resource('students' , StudentController::class);
 Route::get('/', function () {
     return view('demo');
 });
