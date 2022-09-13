@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+
+Route::resource('student', StudentController::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,13 @@ Route::get('/', function () {
 Route::get('/student',
     [StudentController::class,'index']
 );
+Route::get('/student/create',
+    [StudentController::class,'create']
+);
+Route::post('/student/store',
+    [StudentController::class,'store']
+);
+
 Route::get('/teacher/form', function () {
     return view('teacher.form');
 });

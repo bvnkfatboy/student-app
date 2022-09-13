@@ -7,21 +7,43 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-    public function index(Student $student)
+    public function index()
     {
         
         // $students = Student::all()->toArray();
-        // $students = Student::getByFaculty(1)->toArray();
+        $students = Student::all()->toArray();
         // var_dump($students);
-        // return view('student.show',compact('student'));
+        return view("student.index") -> with(
+            compact([
+                'students',
+            ])
+        );
     }
 
 
 
-    // public function create()
-    // {
-        
-    // }
+    public function create()
+    {
+        return view("student.create");
+    }
+
+    public function store(Request $request) {
+        $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'birthdate' => 'required',
+            'faculty' => 'required',
+        ]);
+
+        Student::create($request->all());
+
+        $students = Student::all()->toArray();
+        return view("student.index") -> with(
+            compact([
+                'students',
+            ])
+        );
+    }
     // public function update($student_id)
     // {
     //     # code...
