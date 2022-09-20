@@ -20,4 +20,9 @@ class Student extends Model
         return self::where('faculty',  $faculty_id)->get();
                     
     }
+
+
+    public static function insertDB($request){
+        return self::create($request);
+    }
 }

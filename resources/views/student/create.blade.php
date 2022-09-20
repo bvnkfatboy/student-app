@@ -25,9 +25,9 @@
                 <label for="form-faculty">Faculty</label>
                 <select class="form-select" name="faculty" >
                     <option selected></option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="คณะหมูกรอบ">คณะหมูกรอบ</option>
+                    <option value="คณะหมูสับ">คณะหมูสับ</option>
+                    <option value="คณะหมูชิ้น">คณะหมูชิ้น</option>
                 </select>
             </div>
 
@@ -36,5 +36,9 @@
         </form>
     </div>
 
-
+    @if ($errors->any())
+            <script>
+                alert('ฟอร์มกรอกไม่ครบ');
+            </script>
+    @endif
 @endsection

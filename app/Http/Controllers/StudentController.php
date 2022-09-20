@@ -35,14 +35,8 @@ class StudentController extends Controller
             'faculty' => 'required',
         ]);
 
-        Student::create($request->all());
-
-        $students = Student::all()->toArray();
-        return view("student.index") -> with(
-            compact([
-                'students',
-            ])
-        );
+        Student::insertDB($request->all());
+            return redirect('/student');
     }
     // public function update($student_id)
     // {

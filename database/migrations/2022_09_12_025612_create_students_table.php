@@ -20,7 +20,7 @@ class CreateStudentsTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('birthdate');
-            $table->integer('faculty');
+            $table->string('faculty');
         
         });
     }
