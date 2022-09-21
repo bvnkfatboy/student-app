@@ -8,10 +8,12 @@
     <div class="container">
         <form method="post" style="max-width:500px" class="mx-auto mt-5" action="/student/store">
             @csrf
+
+            <input type="hidden" name="student_id" value="{{mt_rand(650000,659999)}}">
             <h1 class="mb-1">Register Student</h1>
             <div class="form-group mb-3">
                 <label for="form-name">Name</label>
-                <input class="form-control" type="text" name="firstname">
+                <input class="form-control" type="text" name="firstname" >
             </div>
             <div class="form-group mb-3">
                 <label for="form-sname">Surname</label>

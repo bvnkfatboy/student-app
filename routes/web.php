@@ -25,6 +25,9 @@ Route::get('/student',
 Route::get('/student/create',
     [StudentController::class,'create']
 );
+Route::get('/student/delete/{student_id}',
+    [StudentController::class,'delete']
+);
 Route::post('/student/store',
     [StudentController::class,'store']
 );

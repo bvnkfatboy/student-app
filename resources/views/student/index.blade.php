@@ -21,7 +21,7 @@
                 <td>{{$value['firstname']}}</td>
                 <td>{{$value['lastname']}}</td>
                 <td>{{$value['faculty']}}</td>
-                <td class="text-center"><a href="#" class="btn btn-danger ">Do Something</a></td>
+                <td class="text-center"><a href="student/delete/{{$value['student_id']}}" class="btn btn-danger ">Do Something</a></td>
             </tr>
         @endforeach
         </tbody>

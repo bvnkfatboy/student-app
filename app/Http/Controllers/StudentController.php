@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use PHPUnit\Framework\MockObject\Builder\Stub;
 
 class StudentController extends Controller
 {
@@ -42,10 +43,11 @@ class StudentController extends Controller
     // {
     //     # code...
     // }
-    // public function delete($student_id)
-    // {
-    //     # code...
-    // }
+    public function delete(int $student_id)
+    {
+        Student::deleteDB($student_id);
+        return redirect('/student'); 
+    }
     // public function show($student_id)
     // {
     //     # code...
